@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202025730) do
+ActiveRecord::Schema.define(version: 20140202030430) do
+
+  create_table "locations", force: true do |t|
+    t.integer  "sales_rep_id"
+    t.string   "name"
+    t.string   "line1"
+    t.string   "line2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locations", ["sales_rep_id"], name: "index_locations_on_sales_rep_id"
 
   create_table "sales_groups", force: true do |t|
     t.string   "desc"
