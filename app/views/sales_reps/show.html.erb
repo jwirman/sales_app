@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sales group:</strong>
+  <%= @sales_rep.sales_group %>
+</p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @sales_rep.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @sales_rep.lname %>
+</p>
+
+<%= link_to 'Edit', edit_sales_rep_path(@sales_rep) %> |
+<%= link_to 'Back', sales_reps_path %>

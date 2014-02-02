@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202025400) do
+ActiveRecord::Schema.define(version: 20140202025730) do
 
   create_table "sales_groups", force: true do |t|
     t.string   "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sales_reps", force: true do |t|
+    t.integer  "sales_group_id"
+    t.string   "fname"
+    t.string   "lname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sales_reps", ["sales_group_id"], name: "index_sales_reps_on_sales_group_id"
 
 end

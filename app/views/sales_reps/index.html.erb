@@ -1,0 +1,31 @@
+<h1>Listing sales_reps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sales group</th>
+      <th>Fname</th>
+      <th>Lname</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_reps.each do |sales_rep| %>
+      <tr>
+        <td><%= sales_rep.sales_group %></td>
+        <td><%= sales_rep.fname %></td>
+        <td><%= sales_rep.lname %></td>
+        <td><%= link_to 'Show', sales_rep %></td>
+        <td><%= link_to 'Edit', edit_sales_rep_path(sales_rep) %></td>
+        <td><%= link_to 'Destroy', sales_rep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sales rep', new_sales_rep_path %>
