@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "locations/new" do
   before(:each) do
     assign(:location, stub_model(Location,
-      :sales_rep => nil,
+      :sales_rep => stub_model(SalesRep),
       :name => "MyString",
       :line1 => "MyString",
       :line2 => "MyString",
@@ -18,7 +18,7 @@ describe "locations/new" do
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", locations_path, "post" do
-      assert_select "input#location_sales_rep[name=?]", "location[sales_rep]"
+      assert_select "select#location_sales_rep_id[name=?]", "location[sales_rep_id]"
       assert_select "input#location_name[name=?]", "location[name]"
       assert_select "input#location_line1[name=?]", "location[line1]"
       assert_select "input#location_line2[name=?]", "location[line2]"

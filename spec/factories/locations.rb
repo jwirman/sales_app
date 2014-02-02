@@ -22,7 +22,7 @@
 
 FactoryGirl.define do
   factory :location do
-    sales_rep nil
+    sales_rep
     name "MyString"
     line1 "MyString"
     line2 "MyString"

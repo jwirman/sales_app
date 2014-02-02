@@ -11,5 +11,7 @@
 require 'spec_helper'
 
 describe SalesGroup do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it { should have_many :sales_reps }
+
 end

@@ -17,5 +17,8 @@
 require 'spec_helper'
 
 describe SalesRep do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it { should belong_to :sales_group }
+  it { should have_one :location }
+
 end

@@ -18,7 +18,7 @@
 
 FactoryGirl.define do
   factory :sales_rep do
-    sales_group nil
+    sales_group
     fname "MyString"
     lname "MyString"
   end
