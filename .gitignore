@@ -16,5 +16,6 @@
 /tmp
 
 .ruby-version
+.rspec
 tags
 coverage
