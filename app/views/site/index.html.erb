@@ -1,0 +1,24 @@
+<ul>
+  <li><%= link_to 'Sales Groups', sales_groups_path %></li>
+  <li><%= link_to 'Sales Reps', sales_reps_path %></li>
+  <li><%= link_to 'Locations', locations_path %></li>
+</ul>
+
+<h3>SalesGroups with each SalesRep listed under the Group</h3>
+<% @groups_reps.each do |group| %>
+  Group: <%= group %><br />
+  Reps: <%= group.sales_reps.map(&:to_s).join(', ') %><br />
+<% end %>
+
+<h3>Locations with each SalesRep listed under the Location</h3>
+<% @locations_rep.each do |location| %>
+  Location: <%= location %><br />
+  Rep: <%= location.sales_rep %><br />
+<% end %>
+
+<h3>SalesGroups with each Location listed under the Group</h3>
+<% @groups_reps_location.each do |group| %>
+  Group: <%= group %><br />
+  Location: <%= group.sales_reps.map(&:location).join(', ') %><br />
+<% end %>
+

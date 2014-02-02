@@ -20,4 +20,8 @@
 
 class Location < ActiveRecord::Base
   belongs_to :sales_rep
+
+  def to_s
+    "#{name} #{city}, #{state}"
+  end
 end

@@ -15,6 +15,12 @@
 #
 
 class SalesRep < ActiveRecord::Base
+
   belongs_to :sales_group
   has_one :location
+
+  def to_s
+    "#{fname} #{lname}"
+  end
+
 end

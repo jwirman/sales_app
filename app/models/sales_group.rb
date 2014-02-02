@@ -9,5 +9,11 @@
 #
 
 class SalesGroup < ActiveRecord::Base
+
   has_many :sales_reps
+
+  def to_s
+    desc
+  end
+
 end
