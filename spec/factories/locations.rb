@@ -18,6 +18,16 @@
 #  index_locations_on_sales_rep_id  (sales_rep_id)
 #
 
-class Location < ActiveRecord::Base
-  belongs_to :sales_rep
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :location do
+    sales_rep nil
+    name "MyString"
+    line1 "MyString"
+    line2 "MyString"
+    city "MyString"
+    state "MyString"
+    zip "MyString"
+  end
 end

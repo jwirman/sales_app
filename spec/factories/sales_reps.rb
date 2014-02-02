@@ -14,7 +14,12 @@
 #  index_sales_reps_on_sales_group_id  (sales_group_id)
 #
 
-class SalesRep < ActiveRecord::Base
-  belongs_to :sales_group
-  has_one :location
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :sales_rep do
+    sales_group nil
+    fname "MyString"
+    lname "MyString"
+  end
 end

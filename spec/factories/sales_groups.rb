@@ -8,6 +8,10 @@
 #  updated_at :datetime
 #
 
-class SalesGroup < ActiveRecord::Base
-  has_many :sales_reps
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :sales_group do
+    desc "MyString"
+  end
 end
